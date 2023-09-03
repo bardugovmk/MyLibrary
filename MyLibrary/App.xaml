@@ -1,0 +1,23 @@
+﻿<Application x:Class="MyLibrary.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+   
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/TableButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/ExitButton.xaml"/>
+                <ResourceDictionary Source="Theme/MinimizeButton.xaml"/>
+                <ResourceDictionary Source="Theme/MaximizedButton.xaml"/>
+                <ResourceDictionary Source="Theme/InTheMenu.xaml"/>
+                <ResourceDictionary Source="Theme/MenuButton.xaml"/>
+                <ResourceDictionary Source="Theme/TextOfMenuButtons.xaml"/>
+                <ResourceDictionary Source="Theme/addButton.xaml"/>
+                <ResourceDictionary Source="Theme/TextboxTheme.xaml"/>
+                <ResourceDictionary Source="Theme/TableStylePack.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
