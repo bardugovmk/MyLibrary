@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="МояБиблиотека" 
-        Height="1050" 
-        Width="1680" 
+        Height="768" 
+        Width="1024" 
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True" 
@@ -17,18 +17,18 @@
     <Border Background="#272537"
             CornerRadius="20">
         <Grid>
-            <ContentControl x:Name="WorkingArea" 
-                            Grid.Row="2" 
-                            Background="#1b1b1b" 
+            <ContentControl x:Name="WorkingArea"
+                            Grid.Row="2"
+                            Background="#1b1b1b"
                             Margin="10,65,10,10"/>
             
             <Label Content="Моя Библиотека" 
-                   Margin="50,20,0,0"
                    FontSize="26" 
                    Foreground="White" 
                    HorizontalAlignment="Left" 
-                   VerticalAlignment="Top"/>
-            
+                   VerticalAlignment="Top" 
+                   Margin="55,15,0,0"/>
+
             <Image Height="35" 
                    Margin="20,20,0,0" 
                    VerticalAlignment="Top" 
@@ -37,28 +37,45 @@
                    HorizontalAlignment="Left"/>
 
             <Button Style="{DynamicResource ExitButton}"
+                    x:Name="ExitButton"
                     Background="#E31F1F" 
                     HorizontalAlignment="Right" 
                     Margin="0,25,35,0" 
                     VerticalAlignment="Top" 
                     Height="30" 
-                    Width="30" />
+                    Width="30" 
+                    Click="ExitButton_Click" />
 
             <Button Style="{DynamicResource MaximizedButton}"
+                    x:Name="MaximizedButton"
                     Background="#FFFF17" 
                     HorizontalAlignment="Right" 
-                    Margin="0,25,77,0" 
+                    Margin="0,25,75,0" 
                     VerticalAlignment="Top" 
                     Height="30" 
-                    Width="30"/>
+                    Width="30" Click="MaximizedButton_Click"/>
 
             <Button Style="{DynamicResource MinimizeButton}"
+                    x:Name="MinimizeButton"
                     Background="#1CDD1C" 
                     HorizontalAlignment="Right" 
-                    Margin="0,25,119,0" 
+                    Margin="0,25,120,0" 
                     VerticalAlignment="Top" 
                     Height="30" 
-                    Width="30"/>
+                    Width="30" Click="MinimizeButton_Click"/>
+
+
+            <ToggleButton Style="{DynamicResource OverTheWindowsButton}" 
+                          x:Name="OverTheWindowsButton"
+                          HorizontalAlignment="Right"
+                          VerticalAlignment="Top"
+                          Width="30"
+                          Height="30"
+                          Margin="0,25,165,0" 
+                          BorderThickness="0"
+                          Unchecked="OverTheWindowsButton_Unchecked" 
+                          Checked="OverTheWindowsButton_Checked"/>
+
         </Grid>
     </Border>
 </Window>

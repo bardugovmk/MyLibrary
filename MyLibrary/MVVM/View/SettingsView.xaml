@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="MyLibrary.MVVM.View.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="975" 
+             d:DesignWidth="1660">
+
+    <Border Background="#272537"
+            CornerRadius="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="275"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Row="1" >
+                <Button Height="50"
+                        Background="#272531"
+                        Content="Вернутся в меню"
+                        Foreground="White"
+                        FontSize="16" 
+                        BorderBrush="Black"/>
+
+                <RadioButton
+                    Content="Книги"
+                    Foreground="White"
+                    FontSize="16"
+                    Height="50"
+                    Style="{StaticResource MenuButtonTheme}"
+                    IsChecked="True"
+                    Command="{Binding BookViewCommand}"
+                    />
+                <RadioButton
+                    Content="Читатели"
+                    Foreground="White"
+                    FontSize="16"
+                    Height="50"
+                    Style="{StaticResource MenuButtonTheme}"
+                    Command="{Binding ReadersViewCommand}"
+                    />
+                <RadioButton
+                    Content="Авторы"
+                    Foreground="White"
+                    FontSize="16"
+                    Height="50"
+                    Style="{StaticResource MenuButtonTheme}" Command="{Binding AuthorsCommand}"
+                    />
+                <RadioButton
+                    Content="Жанры"
+                    Foreground="White"
+                    FontSize="16"
+                    Height="50"
+                    Style="{StaticResource MenuButtonTheme}" Command="{Binding GenresCommand}"
+                    />
+                <RadioButton
+                    Content="Издательства"
+                    Foreground="White"
+                    FontSize="16"
+                    Height="50"
+                    Style="{StaticResource MenuButtonTheme}" 
+                    Command="{Binding PublishingViewCommand}"
+                    />
+                <Border Background="#1b1b1b"
+                        Height="2"/>
+                <RadioButton
+                    Content="Книги на руках"
+                    Foreground="White"
+                    FontSize="16"
+                    Height="50"
+                    Style="{StaticResource MenuButtonTheme}" Command="{Binding BooksOnHandCommand}"
+                    />
+
+            </StackPanel>
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="5"
+                            Content="{Binding CurrentView}"
+                            />
+
+        </Grid>
+    </Border>
+</UserControl>

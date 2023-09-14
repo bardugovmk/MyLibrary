@@ -6,16 +6,19 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Theme/TableButtonTheme.xaml"/>
-                <ResourceDictionary Source="Theme/ExitButton.xaml"/>
-                <ResourceDictionary Source="Theme/MinimizeButton.xaml"/>
-                <ResourceDictionary Source="Theme/MaximizedButton.xaml"/>
-                <ResourceDictionary Source="Theme/InTheMenu.xaml"/>
-                <ResourceDictionary Source="Theme/MenuButton.xaml"/>
-                <ResourceDictionary Source="Theme/TextOfMenuButtons.xaml"/>
+                <ResourceDictionary Source="Theme/WindowStyle/ExitButton.xaml"/>
+                <ResourceDictionary Source="Theme/WindowStyle/MinimizeButton.xaml"/>
+                <ResourceDictionary Source="Theme/WindowStyle/MaximizedButton.xaml"/>
+                <ResourceDictionary Source="Theme/WindowStyle/OverTheWindowsButton.xaml"/>
+                
+                <ResourceDictionary Source="Theme/MainScreen/MenuButton.xaml"/>
+                <ResourceDictionary Source="Theme/MainScreen/TextOfMenuButtons.xaml"/>
+                <ResourceDictionary Source="Theme/MainScreen/SearchBoxTheme.xaml"/>
+
+                <ResourceDictionary Source="Theme/MenuBar/TableButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/MenuBar/InTheMenu.xaml"/>
                 <ResourceDictionary Source="Theme/addButton.xaml"/>
-                <ResourceDictionary Source="Theme/TextboxTheme.xaml"/>
-                <ResourceDictionary Source="Theme/TableStylePack.xaml"/>
+                <ResourceDictionary Source="Theme/MenuBar/TextboxTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
         </ResourceDictionary>
