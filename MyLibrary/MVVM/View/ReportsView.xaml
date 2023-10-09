@@ -4,8 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="975" 
-             d:DesignWidth="1660">
+             d:DesignHeight="693" 
+             d:DesignWidth="1004">
     
     <Border Background="#272537"
             CornerRadius="20">
@@ -23,15 +23,14 @@
                         FontSize="16" 
                         BorderBrush="Black"/>
 
-                <RadioButton
-                    Content="Книги"
+                <RadioButton Content="Книги"
                     Foreground="White"
                     FontSize="16"
                     Height="50"
                     Style="{StaticResource MenuButtonTheme}"
                     IsChecked="True"
-                    Command="{Binding BookViewCommand}"
-                    />
+                    Command="{Binding BookViewCommand}"/>
+                
                 <RadioButton
                     Content="Читатели"
                     Foreground="White"
@@ -76,8 +75,7 @@
             <ContentControl Grid.Row="1"
                             Grid.Column="1"
                             Margin="5"
-                            Content="{Binding CurrentView}"
-                            />
+                            Content="{Binding CurrentView}"/>
 
         </Grid>
     </Border>

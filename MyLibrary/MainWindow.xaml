@@ -3,30 +3,67 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModel="clr-namespace:MyLibrary.MVVM.ViewModel"
         mc:Ignorable="d"
-        Title="МояБиблиотека" 
-        Height="768" 
-        Width="1024" 
+        Title="МояБиблиотека"
+        Height="768"
+        Width="1024"
         WindowStyle="None"
         Background="Transparent"
-        AllowsTransparency="True" 
-        Icon="/Resources/ProgramIcon.png"
+        AllowsTransparency="True"
+        Icon="\Resources\ProgramIcon.png"
         WindowStartupLocation="CenterScreen"
         Mouse.MouseDown="Window_MouseDown">
 
-    <Border Background="#272537"
-            CornerRadius="20">
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+
+    <Border Background="#232323"
+            CornerRadius="30">
         <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.RowSpan="1"
+                    Grid.Row="1"
+                    Background="#232323"/>
+
+            <WrapPanel Grid.Row="1">
+                <RadioButton x:Name="TableButton"
+                             Style="{DynamicResource TableSelectionButton}"
+                             Command="{Binding TablesViewCommand}"
+                             IsChecked="True"/>
+
+                <RadioButton x:Name="ReportButton"
+                             Style="{DynamicResource ReportSelectionButton}"
+                             Command="{Binding ReportsViewCommand}"/>
+
+                <RadioButton x:Name="SettingsButton"
+                             Style="{DynamicResource SettingsSelectionButton}"
+                             Command="{Binding SettingsViewCommand}"/>
+
+
+                <RadioButton x:Name="HelpButton"
+                             Style="{DynamicResource HelpSelectionButton}"
+                             Command="{Binding HelpViewCommand}">
+                </RadioButton>
+            </WrapPanel>
+
             <ContentControl x:Name="WorkingArea"
                             Grid.Row="2"
-                            Background="#1b1b1b"
-                            Margin="10,65,10,10"/>
-            
-            <Label Content="Моя Библиотека" 
-                   FontSize="26" 
-                   Foreground="White" 
-                   HorizontalAlignment="Left" 
-                   VerticalAlignment="Top" 
+                            Background="Transparent"
+                            Margin="10,10,10,10"
+                            Content="{Binding CurrentView}"/>
+
+            <Label Content="Моя Библиотека"
+                   FontSize="26"
+                   Foreground="White"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
                    Margin="55,15,0,0"/>
 
             <Image Height="35" 
@@ -38,13 +75,13 @@
 
             <Button Style="{DynamicResource ExitButton}"
                     x:Name="ExitButton"
-                    Background="#E31F1F" 
-                    HorizontalAlignment="Right" 
+                    Background="#E31F1F"
+                    HorizontalAlignment="Right"
                     Margin="0,25,35,0" 
                     VerticalAlignment="Top" 
                     Height="30" 
                     Width="30" 
-                    Click="ExitButton_Click" />
+                    Click="ExitButton_Click"/>
 
             <Button Style="{DynamicResource MaximizedButton}"
                     x:Name="MaximizedButton"
@@ -53,7 +90,8 @@
                     Margin="0,25,75,0" 
                     VerticalAlignment="Top" 
                     Height="30" 
-                    Width="30" Click="MaximizedButton_Click"/>
+                    Width="30" 
+                    Click="MaximizedButton_Click"/>
 
             <Button Style="{DynamicResource MinimizeButton}"
                     x:Name="MinimizeButton"
@@ -62,8 +100,8 @@
                     Margin="0,25,120,0" 
                     VerticalAlignment="Top" 
                     Height="30" 
-                    Width="30" Click="MinimizeButton_Click"/>
-
+                    Width="30" 
+                    Click="MinimizeButton_Click"/>
 
             <ToggleButton Style="{DynamicResource OverTheWindowsButton}" 
                           x:Name="OverTheWindowsButton"
@@ -75,7 +113,6 @@
                           BorderThickness="0"
                           Unchecked="OverTheWindowsButton_Unchecked" 
                           Checked="OverTheWindowsButton_Checked"/>
-
         </Grid>
     </Border>
 </Window>

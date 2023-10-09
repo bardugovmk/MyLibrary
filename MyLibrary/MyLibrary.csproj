@@ -54,7 +54,7 @@
       <HintPath>..\packages\MahApps.Metro.IconPacks.4.11.0\lib\net47\MahApps.Metro.IconPacks.Coolicons.dll</HintPath>
     </Reference>
     <Reference Include="MahApps.Metro.IconPacks.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0c0d510f9915137a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MahApps.Metro.IconPacks.4.11.0\lib\net47\MahApps.Metro.IconPacks.Core.dll</HintPath>
+      <HintPath>..\packages\MahApps.Metro.IconPacks.Material.4.11.0\lib\net47\MahApps.Metro.IconPacks.Core.dll</HintPath>
     </Reference>
     <Reference Include="MahApps.Metro.IconPacks.Entypo, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0c0d510f9915137a, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.IconPacks.4.11.0\lib\net47\MahApps.Metro.IconPacks.Entypo.dll</HintPath>
@@ -87,7 +87,7 @@
       <HintPath>..\packages\MahApps.Metro.IconPacks.4.11.0\lib\net47\MahApps.Metro.IconPacks.JamIcons.dll</HintPath>
     </Reference>
     <Reference Include="MahApps.Metro.IconPacks.Material, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0c0d510f9915137a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MahApps.Metro.IconPacks.4.11.0\lib\net47\MahApps.Metro.IconPacks.Material.dll</HintPath>
+      <HintPath>..\packages\MahApps.Metro.IconPacks.Material.4.11.0\lib\net47\MahApps.Metro.IconPacks.Material.dll</HintPath>
     </Reference>
     <Reference Include="MahApps.Metro.IconPacks.MaterialDesign, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0c0d510f9915137a, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.IconPacks.4.11.0\lib\net47\MahApps.Metro.IconPacks.MaterialDesign.dll</HintPath>
@@ -182,10 +182,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\HomeView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MVVM\View\ReportsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -198,9 +194,101 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\TableView\ActiveReadersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\TableView\AuthorsTableView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\TableView\BooksInLibraryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\TableView\BooksOnHandView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\TableView\BookTableView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\TableView\DebtorsTableView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\TableView\FormatsTableView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\TableView\GenresTableView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\TableView\Issuance&amp;ReturnView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\TableView\IssuanceTableView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\TableView\PublishingHousesTableView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\TableView\ReaderTableView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\TableView\ReturnTableView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\TableView\SeriesTableView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\TableView\WorksTableView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Theme\AddButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theme\Table\DataGridCellStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\Table\DataGridColumnHeaderStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\Table\DataGridRowStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\Table\DataGridStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\Table\GridButtonIcon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\Table\GridEditButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\Table\GridRemoveButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\Table\ScrollBarStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Theme\WindowStyle\ExitButton.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -230,7 +318,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Theme\MenuBar\TableButtonTheme.xaml">
+    <Page Include="Theme\MenuBar\MenuButtonTheme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -244,11 +332,29 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVVM\ViewModel\HelpViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\ReportsViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\SettingsViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\TablesViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\TableViewModel\ActiveReadersViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\TableViewModel\AuthorsTableViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\TableViewModel\BooksInLibraryViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\TableViewModel\BooksOnHandViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\TableViewModel\BookTableViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\TableViewModel\DebtorsTableViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\TableViewModel\FormatsTableViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\TableViewModel\GenresTableViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\TableViewModel\Issuance&amp;ReturnViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\TableViewModel\IssuanceTableViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\TableViewModel\PublishingHousesTableViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\TableViewModel\ReaderTableViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\TableViewModel\ReturnTableViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\TableViewModel\SeriesTableViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\TableViewModel\TableMainViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\TableViewModel\WorksTableViewModel.cs" />
     <Compile Include="MVVM\View\HelpView.xaml.cs">
       <DependentUpon>HelpView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MVVM\View\HomeView.xaml.cs">
-      <DependentUpon>HomeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\ReportsView.xaml.cs">
       <DependentUpon>ReportsView.xaml</DependentUpon>
@@ -258,6 +364,51 @@
     </Compile>
     <Compile Include="MVVM\View\TablesView.xaml.cs">
       <DependentUpon>TablesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\TableView\ActiveReadersView.xaml.cs">
+      <DependentUpon>ActiveReadersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\TableView\AuthorsTableView.xaml.cs">
+      <DependentUpon>AuthorsTableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\TableView\BooksInLibraryView.xaml.cs">
+      <DependentUpon>BooksInLibraryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\TableView\BooksOnHandView.xaml.cs">
+      <DependentUpon>BooksOnHandView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\TableView\BookTableView.xaml.cs">
+      <DependentUpon>BookTableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\TableView\DebtorsTableView.xaml.cs">
+      <DependentUpon>DebtorsTableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\TableView\FormatsTableView.xaml.cs">
+      <DependentUpon>FormatsTableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\TableView\GenresTableView.xaml.cs">
+      <DependentUpon>GenresTableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\TableView\Issuance&amp;ReturnView.xaml.cs">
+      <DependentUpon>Issuance&amp;ReturnView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\TableView\IssuanceTableView.xaml.cs">
+      <DependentUpon>IssuanceTableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\TableView\PublishingHousesTableView.xaml.cs">
+      <DependentUpon>PublishingHousesTableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\TableView\ReaderTableView.xaml.cs">
+      <DependentUpon>ReaderTableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\TableView\ReturnTableView.xaml.cs">
+      <DependentUpon>ReturnTableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\TableView\SeriesTableView.xaml.cs">
+      <DependentUpon>SeriesTableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\TableView\WorksTableView.xaml.cs">
+      <DependentUpon>WorksTableView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -286,20 +437,54 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Help.png" />
-    <Resource Include="Resources\ProgramIcon.png" />
-    <Resource Include="Resources\Reports.png" />
-    <Resource Include="Resources\Settings.png" />
-    <Resource Include="Resources\Table.png" />
+    <Resource Include="Resources\tmp\Лермонтов.png" />
+    <Resource Include="Resources\tmp\Пушкин.png" />
+    <Resource Include="Resources\tmp\Булгаков.png" />
+    <Resource Include="Resources\tmp\Гоголь.png" />
+    <Resource Include="Resources\tmp\Горький.png" />
+    <Resource Include="Resources\tmp\Достоевский.png" />
+    <Resource Include="Resources\tmp\Толстой.png" />
+    <Resource Include="Resources\tmp\Тургеньев.png" />
+    <Resource Include="Resources\tmp\Чехов.png" />
+    <Resource Include="Resources\HomeIco\Help.png" />
+    <Resource Include="Resources\tmp\Lem.png" />
+    <Resource Include="Resources\ProgramIcon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\HomeIco\Reports.png" />
+    <Resource Include="Resources\HomeIco\Settings.png" />
+    <Resource Include="Resources\HomeIco\Table.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MVVM\ViewModel\" />
+    <Folder Include="MVVM\ViewModel\HelpViewModel\" />
+    <Folder Include="MVVM\ViewModel\ReportViewModel\" />
+    <Folder Include="MVVM\ViewModel\SettingViewModel\" />
     <Folder Include="MVVM\View\Add&amp;&amp;EditView\" />
     <Folder Include="MVVM\View\HelpView\" />
-    <Folder Include="MVVM\View\ReportsView\" />
-    <Folder Include="MVVM\View\SettingsView\" />
-    <Folder Include="MVVM\View\TablesView\" />
-    <Folder Include="Theme\Table\" />
+    <Folder Include="MVVM\View\ReportView\" />
+    <Folder Include="MVVM\View\SettingView\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TableIco\ActiveReaders.png" />
+    <Resource Include="Resources\TableIco\Authors.png" />
+    <Resource Include="Resources\TableIco\BookIco.png" />
+    <Resource Include="Resources\TableIco\BooksInLibrary.png" />
+    <Resource Include="Resources\TableIco\BooksOnHand.png" />
+    <Resource Include="Resources\TableIco\DebtorsOfBooks.png" />
+    <Resource Include="Resources\TableIco\Formats.png" />
+    <Resource Include="Resources\TableIco\Genres.png" />
+    <Resource Include="Resources\TableIco\Issuance_Return.png" />
+    <Resource Include="Resources\TableIco\Issuance.png" />
+    <Resource Include="Resources\TableIco\Publishing.png" />
+    <Resource Include="Resources\TableIco\ReaderIco.png" />
+    <Resource Include="Resources\TableIco\Return.png" />
+    <Resource Include="Resources\TableIco\Series.png" />
+    <Resource Include="Resources\TableIco\Works.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TableIco\Menu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

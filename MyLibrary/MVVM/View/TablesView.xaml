@@ -3,82 +3,297 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:viewModel="clr-namespace:MyLibrary.MVVM.ViewModel.TableViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="975" 
-             d:DesignWidth="1660">
+             d:DesignHeight="693" 
+             d:DesignWidth="1004">
 
-    <Border Background="#272537"
-            CornerRadius="20">
+    <UserControl.DataContext>
+        <viewModel:TableMainViewModel/>
+    </UserControl.DataContext>
+
+    <Border Background="#000"
+            CornerRadius="30">
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="275"/>
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="9*"/>
+            </Grid.RowDefinitions>
 
-            <StackPanel Grid.Row="1" >
-                <Button Height="50"
-                        Background="#272531"
-                        Content="Вернутся в меню"
-                        Foreground="White"
-                        FontSize="16" 
-                        BorderBrush="Black"/>
+            <Border Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    CornerRadius="0,0,30,30"
+                    Background="#232323">
 
-                <RadioButton
-                    Content="Книги"
-                    Foreground="White"
-                    FontSize="16"
-                    Height="50"
-                    Style="{StaticResource MenuButtonTheme}"
-                    IsChecked="True"
-                    Command="{Binding BookViewCommand}"
-                    />
-                <RadioButton
-                    Content="Читатели"
-                    Foreground="White"
-                    FontSize="16"
-                    Height="50"
-                    Style="{StaticResource MenuButtonTheme}"
-                    Command="{Binding ReadersViewCommand}"
-                    />
-                <RadioButton
-                    Content="Авторы"
-                    Foreground="White"
-                    FontSize="16"
-                    Height="50"
-                    Style="{StaticResource MenuButtonTheme}" Command="{Binding AuthorsCommand}"
-                    />
-                <RadioButton
-                    Content="Жанры"
-                    Foreground="White"
-                    FontSize="16"
-                    Height="50"
-                    Style="{StaticResource MenuButtonTheme}" Command="{Binding GenresCommand}"
-                    />
-                <RadioButton
-                    Content="Издательства"
-                    Foreground="White"
-                    FontSize="16"
-                    Height="50"
-                    Style="{StaticResource MenuButtonTheme}" 
-                    Command="{Binding PublishingViewCommand}"
-                    />
-                <Border Background="#1b1b1b"
-                        Height="2"/>
-                <RadioButton
-                    Content="Книги на руках"
-                    Foreground="White"
-                    FontSize="16"
-                    Height="50"
-                    Style="{StaticResource MenuButtonTheme}" Command="{Binding BooksOnHandCommand}"
-                    />
+                <Grid Grid.Row="0">
+                    <WrapPanel>
+                        <StackPanel HorizontalAlignment="Left" 
+                                    VerticalAlignment="Bottom" 
+                                    Margin="30,0,0,5">
+                            <TextBlock Text="Поиск"
+                                       Foreground="White" 
+                                       HorizontalAlignment="Left" 
+                                       VerticalAlignment="Bottom" 
+                                       Margin="10,25,0,0"/>
+                            <TextBox Height="25"
+                                     Width="275"
+                                     Foreground="White" 
+                                     HorizontalAlignment="Center" 
+                                     VerticalAlignment="Center"
+                                     FontSize="12"
+                                     Style="{DynamicResource SearchBoxTheme}"/>
+                        </StackPanel>
 
-            </StackPanel>
-            <ContentControl Grid.Row="1"
-                            Grid.Column="1"
-                            Margin="5"
-                            Content="{Binding CurrentView}"
-                            />
+                        <StackPanel HorizontalAlignment="Left" 
+                                    VerticalAlignment="Bottom" 
+                                    Margin="15,0,0,5">
+                            <TextBlock Text="Таблица"
+                                       Foreground="White" 
+                                       Margin="0,0,0,10"/>
+                            <ComboBox Height="25"
+                                      Width="150"
+                                      Background="#232323"
+                                      BorderBrush="#333333"
+                                      Foreground="Black">
+                                <ComboBoxItem Content="Авторы"/>
+                            </ComboBox>
+                        </StackPanel>
 
+                        <StackPanel HorizontalAlignment="Left" 
+                                    VerticalAlignment="Bottom" 
+                                    Margin="15,0,0,5">
+                            <TextBlock Text="Категории"
+                                       Foreground="White" 
+                                       Margin="0,0,0,10"/>
+                            <ComboBox Height="25"
+                                      Width="150"
+                                      Background="#232323"
+                                      BorderBrush="#333333">
+                                <ComboBoxItem Content="Фамилия (авторы)"/>
+                            </ComboBox>
+                        </StackPanel>
+                    </WrapPanel>
+                </Grid>
+            </Border>
+            
+            <ContentControl x:Name="TableArea"
+                            Grid.Row="1"
+                            Margin="47,10,5,5"
+                            Background="Transparent"
+                            Content="{Binding CurrentTableView}"
+                            PreviewMouseLeftButtonDown="BG_PreviewMouseLeftButtonDown"/>
+            
+            <Border x:Name="MenuPanel"
+                    Grid.Row="1"
+                    Background="#232323" 
+                    Margin="0,5,0,25"
+                    CornerRadius="0,25,25,0" 
+                    Width="47" 
+                    HorizontalAlignment="Left">
+                <WrapPanel>
+                    <Grid>
+                        <ToggleButton x:Name="MainButton"
+                                      HorizontalAlignment="Left"
+                                      VerticalAlignment="Top"
+                                      BorderThickness="0"
+                                      Margin="7.5,10,0,0"
+                                      Style="{DynamicResource MainBtnTheme}">
+                            <ToggleButton.Background>
+                                <ImageBrush ImageSource="D:\ProgramCSharp\GitHub\MyLibrary\MyLibrary\Resources\TableIco\Menu.png" 
+                                            Stretch="Uniform"/>
+                            </ToggleButton.Background>
+                            <ToggleButton.Triggers>
+                                <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                                    <BeginStoryboard>
+                                        <Storyboard x:Name="HideStackPanel">
+                                            <DoubleAnimation Storyboard.TargetName="MenuPanel"
+                                                         Storyboard.TargetProperty="Width"
+                                                         BeginTime="0:0:0"
+                                                         From="200" To="47"
+                                                         Duration="0:0:0.2"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+
+                                <EventTrigger RoutedEvent="ToggleButton.Checked">
+                                    <BeginStoryboard>
+                                        <Storyboard x:Name="ShowStackPanel">
+                                            <DoubleAnimation Storyboard.TargetName="MenuPanel"
+                                                         Storyboard.TargetProperty="Width"
+                                                         BeginTime="0:0:0"
+                                                         From="47" To="200"
+                                                         Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+
+                            </ToggleButton.Triggers>
+                        </ToggleButton>
+
+                        <TextBlock Text="Меню"
+                                   Margin="50,5,0,0"
+                                   FontSize="24" 
+                                   HorizontalAlignment="Left" 
+                                   VerticalAlignment="Top" 
+                                   FontFamily="Segoe UI"
+                                   Foreground="White" 
+                                   FontWeight="Bold"/>
+                    </Grid>
+
+                    <StackPanel Margin="0,5,0,0" >
+                        <RadioButton Style="{DynamicResource BookButtonTheme}" 
+                                     Width="200"
+                                     Height="35" 
+                                     VerticalAlignment="Top" 
+                                     HorizontalAlignment="Left"
+                                     Content="Книги"
+                                     Foreground="White"
+                                     Command="{Binding BookTableViewCommand}"/>
+
+
+                        <RadioButton Style="{DynamicResource ReaderIcoButtonTheme}" 
+                                     Width="200"
+                                     Height="35" 
+                                     VerticalAlignment="Top" 
+                                     HorizontalAlignment="Left"
+                                     Content="Читатели"
+                                     Foreground="White"
+                                     Command="{Binding ReaderTableViewCommand}"/>
+
+
+                        <RadioButton Style="{DynamicResource AuthorsButtonTheme}" 
+                                     Width="200"
+                                     Height="35" 
+                                     VerticalAlignment="Top" 
+                                     HorizontalAlignment="Left"
+                                     Content="Авторы"
+                                     Foreground="White"
+                                     Command="{Binding AuthorsTableViewCommand}"
+                                     IsChecked="True"/>
+
+
+                        <RadioButton Style="{DynamicResource SeriesButtonTheme}" 
+                                     Width="200"
+                                     Height="35" 
+                                     VerticalAlignment="Top" 
+                                     HorizontalAlignment="Left"
+                                     Content="Серии"
+                                     Foreground="White"
+                                     Command="{Binding SeriesTableViewCommand}"/>
+
+
+                        <RadioButton Style="{DynamicResource FormatsButtonTheme}" 
+                                     Width="200"
+                                     Height="35" 
+                                     VerticalAlignment="Top" 
+                                     HorizontalAlignment="Left"
+                                     Content="Форматы"
+                                     Foreground="White"
+                                     Command="{Binding FormatsTableViewCommand}"/>
+
+
+                        <RadioButton Style="{DynamicResource PublishingButtonTheme}" 
+                                     Width="200"
+                                     Height="35" 
+                                     VerticalAlignment="Top" 
+                                     HorizontalAlignment="Left"
+                                     Content="Издательства"
+                                     Foreground="White"
+                                     Command="{Binding PublishingHousesTableViewCommand}"/>
+
+
+                        <RadioButton Style="{DynamicResource WorksButtonTheme}" 
+                                     Width="200"
+                                     Height="35" 
+                                     VerticalAlignment="Top" 
+                                     HorizontalAlignment="Left"
+                                     Content="Произведения"
+                                     Foreground="White"
+                                     Command="{Binding WorksTableViewCommand}"/>
+
+
+                        <RadioButton Style="{DynamicResource GenresButtonTheme}" 
+                                     Width="200"
+                                     Height="35" 
+                                     VerticalAlignment="Top" 
+                                     HorizontalAlignment="Left"
+                                     Content="Жанры"
+                                     Foreground="White"
+                                     Command="{Binding GenresTableViewCommand}"/>
+
+
+                        <RadioButton Style="{DynamicResource IssuanceButtonTheme}" 
+                                     Width="200"
+                                     Height="35" 
+                                     VerticalAlignment="Top" 
+                                     HorizontalAlignment="Left"
+                                     Content="Выдача"
+                                     Foreground="White"
+                                     Command="{Binding IssuanceTableViewCommand}"/>
+
+
+                        <RadioButton Style="{DynamicResource ReturnButtonTheme}" 
+                                     Width="200"
+                                     Height="35" 
+                                     VerticalAlignment="Top" 
+                                     HorizontalAlignment="Left"
+                                     Content="Возврат"
+                                     Foreground="White"
+                                     Command="{Binding ReturnTableViewCommand}"/>
+
+
+                        <RadioButton Style="{DynamicResource Issuance_ReturnButtonTheme}" 
+                                     Width="200"
+                                     Height="35" 
+                                     VerticalAlignment="Top" 
+                                     HorizontalAlignment="Left"
+                                     Content="Выдача и возврат"
+                                     Foreground="White"
+                                     Command="{Binding Issuance_ReturnViewCommand}"/>
+
+
+                        <RadioButton Style="{DynamicResource DebtorsOfBooksButtonTheme}" 
+                                     Width="200"
+                                     Height="35" 
+                                     VerticalAlignment="Top" 
+                                     HorizontalAlignment="Left"
+                                     Content="Должники"
+                                     Foreground="White"
+                                     Command="{Binding DebtorsTableViewCommand}"/>
+
+
+                        <RadioButton Style="{DynamicResource BooksInLibraryButtonTheme}" 
+                                     Width="200"
+                                     Height="35" 
+                                     VerticalAlignment="Top" 
+                                     HorizontalAlignment="Left"
+                                     Content="Книги в библиотеке"
+                                     Foreground="White"
+                                     Command="{Binding BooksInLibraryViewCommand}"/>
+
+
+                        <RadioButton Style="{DynamicResource BooksOnHandButtonTheme}" 
+                                     Width="200"
+                                     Height="35" 
+                                     VerticalAlignment="Top" 
+                                     HorizontalAlignment="Left"
+                                     Content="Книги на руках"
+                                     Foreground="White"
+                                     Command="{Binding BooksOnHandViewCommand}"/>
+
+
+                        <RadioButton Style="{DynamicResource ActiveReadersButtonTheme}" 
+                                     Width="200"
+                                     Height="35" 
+                                     VerticalAlignment="Top" 
+                                     HorizontalAlignment="Left"
+                                     Content="Активные читатели"
+                                     Foreground="White"
+                                     Command="{Binding ActiveReadersViewCommand}"/>
+                    </StackPanel>
+                </WrapPanel>
+            </Border>
         </Grid>
     </Border>
 </UserControl>

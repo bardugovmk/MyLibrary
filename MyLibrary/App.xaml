@@ -1,6 +1,11 @@
 ﻿<Application x:Class="MyLibrary.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:viewModel="clr-namespace:MyLibrary.MVVM.ViewModel"
+             xmlns:view="clr-namespace:MyLibrary.MVVM.View"
+             
+             xmlns:tableViewModel="clr-namespace:MyLibrary.MVVM.ViewModel.TableViewModel"
+             xmlns:tableView="clr-namespace:MyLibrary.MVVM.View.TableView"
              StartupUri="MainWindow.xaml">
    
     <Application.Resources>
@@ -15,12 +20,102 @@
                 <ResourceDictionary Source="Theme/MainScreen/TextOfMenuButtons.xaml"/>
                 <ResourceDictionary Source="Theme/MainScreen/SearchBoxTheme.xaml"/>
 
-                <ResourceDictionary Source="Theme/MenuBar/TableButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/MenuBar/MenuButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/MenuBar/InTheMenu.xaml"/>
                 <ResourceDictionary Source="Theme/addButton.xaml"/>
                 <ResourceDictionary Source="Theme/MenuBar/TextboxTheme.xaml"/>
+
+                <ResourceDictionary Source="Theme/Table/DataGridCellStyle.xaml"/>
+                <ResourceDictionary Source="Theme/Table/DataGridColumnHeaderStyle.xaml"/>
+                <ResourceDictionary Source="Theme/Table/DataGridRowStyle.xaml"/>
+                <ResourceDictionary Source="Theme/Table/DataGridStyle.xaml"/>
+                <ResourceDictionary Source="Theme/Table/GridButtonIcon.xaml"/>
+                <ResourceDictionary Source="Theme/Table/GridEditButton.xaml"/>
+                <ResourceDictionary Source="Theme/Table/GridRemoveButton.xaml"/>
+
             </ResourceDictionary.MergedDictionaries>
-            
+
+            <DataTemplate DataType="{x:Type viewModel:HelpViewModel}">
+                <view:HelpView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:ReportsViewModel}">
+                <view:ReportsView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:SettingsViewModel}">
+                <view:SettingsView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:TablesViewModel}">
+                <view:TablesView/>
+            </DataTemplate>
+
+
+
+
+
+
+            <DataTemplate DataType="{x:Type tableViewModel:ActiveReadersViewModel}">
+                <tableView:ActiveReadersView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type tableViewModel:AuthorsTableViewModel}">
+                <tableView:AuthorsTableView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type tableViewModel:BooksInLibraryViewModel}">
+                <tableView:BooksInLibraryView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type tableViewModel:BooksOnHandViewModel}">
+                <tableView:BooksOnHandView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type tableViewModel:BookTableViewModel}">
+                <tableView:BookTableView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type tableViewModel:DebtorsTableViewModel}">
+                <tableView:DebtorsTableView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type tableViewModel:FormatsTableViewModel}">
+                <tableView:FormatsTableView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type tableViewModel:GenresTableViewModel}">
+                <tableView:GenresTableView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type tableViewModel:Issuance_ReturnViewModel}">
+                <tableView:Issuance_ReturnView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type tableViewModel:IssuanceTableViewModel}">
+                <tableView:IssuanceTableView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type tableViewModel:PublishingHousesTableViewModel}">
+                <tableView:PublishingHousesTableView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type tableViewModel:ReaderTableViewModel}">
+                <tableView:ReaderTableView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type tableViewModel:ReturnTableViewModel}">
+                <tableView:ReturnTableView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type tableViewModel:SeriesTableViewModel}">
+                <tableView:SeriesTableView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type tableViewModel:WorksTableViewModel}">
+                <tableView:WorksTableView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

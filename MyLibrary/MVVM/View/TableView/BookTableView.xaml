@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="MyLibrary.MVVM.View.TableView.BookTableView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="621" 
+             d:DesignWidth="952">
+    
+    <Border>
+        <DataGrid x:Name="Book"
+                  Background="#000000"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  FontSize="12"
+                  MinColumnWidth="15"
+                  HeadersVisibility="Column"
+                  Margin="10,10,10,10">
+
+            <DataGridTextColumn x:Name="Id" 
+                                Header="ID книги"
+                                Width="auto"/>
+        </DataGrid>
+    </Border>
+</UserControl>
